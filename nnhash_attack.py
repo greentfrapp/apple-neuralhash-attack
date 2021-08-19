@@ -128,12 +128,10 @@ def main():
     bad_arr = load_image(args.bad)
     adv_arr = bad_arr.copy()
 
-    loss = np.inf
-    loss_threshold = 1e3
     lr = args.lr
     i = 0
     update = None
-    while loss > loss_threshold:
+    while True:
         i += 1
 
         grad = get_gradient(model, adv_arr, good_logits)
