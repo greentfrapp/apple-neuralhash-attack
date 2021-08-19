@@ -160,8 +160,7 @@ Saving image to samples/iteration{i}.png..."""
             )
             if hash_sim == 1:
                 print(f"Identical hash achieved at iteration {i}")
-        # Anneal learning rate, with min learning rate of 1e-5
-        lr = max(lr * 1 - 1e-5, 1e-5)
+                break
 
 
 if __name__ == "__main__":
