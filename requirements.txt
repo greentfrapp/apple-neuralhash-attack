@@ -1,4 +1,4 @@
 numpy==1.19.5
 onnxruntime==1.8.1
-Pillow==8.1.2
+Pillow>=8.2.0
 tensorflow==2.5.0
