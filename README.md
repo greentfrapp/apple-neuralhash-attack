@@ -2,7 +2,7 @@
 
 Demonstrates iterative FGSM on Apple's NeuralHash model.
 
-TL;DR: It is possible to apply noise to CSAM images and make them to look like regular images to the model. The noise does degrade the CSAM image (see samples). But this was achieved without tuning learning rate and there are more refined attacks available too.
+TL;DR: It is possible to apply noise to CSAM images and make them look like regular images to the NeuralHash model. The noise does degrade the CSAM image (see samples). But this was achieved without tuning learning rate and there are more refined attacks available too.
 
 ## Example
 
@@ -11,8 +11,8 @@ Here is an example that uses a Grumpy Cat image in place of a CSAM image. The at
 As a result, both of these images have the same neural hash of `11d9b097ac960bd2c6c131fa`, computed via ONNX Runtime, with the script by [AsuharietYgvar/AppleNeuralHash2ONNX](https://github.com/AsuharietYgvar/AppleNeuralHash2ONNX).
 
 <div>
-<img src="https://raw.githubusercontent.com/greentfrapp/apple-neuralhash-attack/main/samples/doge.png" alt="doge" width="100px" height="whatever" style="display: inline-block;">
-<img src="https://raw.githubusercontent.com/greentfrapp/apple-neuralhash-attack/main/samples/iteration_28000.png" alt="adv_cat" width="100px" height="whatever" style="display: inline-block;">
+<img src="https://raw.githubusercontent.com/greentfrapp/apple-neuralhash-attack/main/samples/doge.png" alt="doge" width="200px" height="whatever" style="display: inline-block;">
+<img src="https://raw.githubusercontent.com/greentfrapp/apple-neuralhash-attack/main/samples/iteration_28000.png" alt="adv_cat" width="200px" height="whatever" style="display: inline-block;">
 </div>
 
 More generally, because the attack optimizes the model output, the adversarial image will generate largely the same hash as the good image, regardless of the seed.
