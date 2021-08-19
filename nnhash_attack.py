@@ -149,7 +149,7 @@ def main():
         update = f"Iteration #{i}: L2-loss={int(loss)}, Hash Similarity={hash_sim}"
         print(update, end="\r")
 
-        if i % args.save_every == 0:
+        if i % args.save_every == 0 or hash_sim == 1:
             print(update)
             update = f"""Good Hash: {good_hash}
 Bad Hash : {get_hash(adv_logits, seed)}
@@ -158,6 +158,8 @@ Saving image to samples/iteration{i}.png..."""
             Image.fromarray(adv_arr[0].transpose(1, 2, 0).astype(np.uint8)).save(
                 f"samples/iteration_{i}.png"
             )
+            if hash_sim == 1:
+                print(f"Identical hash achieved at iteration {i}")
         # Anneal learning rate, with min learning rate of 1e-5
         lr = max(lr * 1 - 1e-5, 1e-5)
 
